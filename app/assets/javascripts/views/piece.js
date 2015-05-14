@@ -1,6 +1,6 @@
 var PieceView = function(piece){
   this.model = piece;
-  $('#heartbeats').on('click', this.addHeart.bind(this));
+  $('body').on('click', '#heartbeats', this.addHeart.bind(this));
 }
 
 PieceView.prototype = {
