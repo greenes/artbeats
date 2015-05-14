@@ -13,7 +13,7 @@ Artist.prototype = {
     $.ajax({
       type:'GET',
       dataType: 'json',
-      url: 'http://localhost:3000/artists' + this.id
+      url: '/artists' + this.id
     }).done(function(response){
 
     })
@@ -23,7 +23,7 @@ Artist.prototype = {
     $.ajax({
       type: 'GET',
       dataType: 'json',
-      url: 'http://localhost:3000/artists/' + this.id + '/galleries'
+      url: '/artists/' + this.id + '/galleries'
     }).done(function(response){
       userModel.loadGalleries(response);
       userView.render();

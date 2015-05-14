@@ -14,7 +14,7 @@ Gallery.prototype = {
       type: 'POST',
       data: { gallery: {artist_id: this.artist, gallery_name: this.gallery_name, description: this.description}},
       dataType: 'json',
-      url: 'http://localhost:3000/galleries'
+      url: 'galleries'
     }).done(function(response) {
       console.log("ajax request complete, model saved?");
       //artBeatModel.getGalleries();
@@ -28,7 +28,7 @@ Gallery.prototype = {
       type: 'PUT',
       data: {gallery: data},
       dataType: 'json',
-      url: 'http://localhost:3000/artists/' + this.artist + '/galleries/' + this.id
+      url: '/artists/' + this.artist + '/galleries/' + this.id
     }).done(function(response){
       console.log("gallery updated");
       //artBeatModel.getGalleries();
@@ -41,7 +41,7 @@ Gallery.prototype = {
     $.ajax({
       type: 'GET',
       dataType: 'json',
-      url: 'http://localhost:3000/artists/' + this.artist + '/galleries/' + this.id + '/pieces'
+      url: '/artists/' + this.artist + '/galleries/' + this.id + '/pieces'
     }).done(function(response){
       galleryModel.loadPieces();
       galleryView.render();
