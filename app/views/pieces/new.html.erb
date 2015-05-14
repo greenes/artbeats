@@ -1,0 +1,24 @@
+<%= form_for [@artist, @gallery, @piece] do |f| %>
+  <p>
+  <%= f.label :piece_name %>
+  <%= f.text_field :piece_name  %>
+  </p>
+
+  <p>
+  <%= f.label :piece_description %>
+  <%= f.text_area :piece_description %>
+  </p>
+
+  <p>
+  <%= f.label :picture %>
+  <%= f.text_area :picture %>
+  </p>
+
+  <%= f.hidden_field :gallery_id, :value => @gallery.id %>
+  <%= f.hidden_field :stars, :value => 0 %>
+
+  <p>
+  <%= f.submit %>
+  </p>
+
+<%end%>

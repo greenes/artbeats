@@ -1,0 +1,9 @@
+<%= render 'form' %>
+
+<h2><%= link_to 'add gallery', new_artist_gallery_path(@artist)%></h2>
+
+<% @galleries.each do |gallery| %>
+    <% artistid = gallery.artist_id %>
+    <% @artist = Artist.find(artistid) %>
+      <h2 id='galleries-index'><%= link_to "#{gallery.gallery_name}",     artist_gallery_path(@artist.id, gallery.id) %></h2>
+<% end %>

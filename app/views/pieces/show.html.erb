@@ -1,0 +1,19 @@
+
+
+<div id='piece-view'><img src="<%=@piece.picture%>"></div>
+
+<h2><%=@piece.piece_name%></h2>
+
+<h2><%=@piece.piece_description%></h2>
+
+<h2><%="From #{@profile.name}'s #{@gallery.gallery_name} gallery"%></h2>
+
+<div id='heartbeats'> </div>
+<h2 id='num-of-artbeats'><%="#{@piece.stars}"%></h2>
+
+<form>
+  <input id='piece-artist' type='hidden' value='<%=@artist.id%>'>
+  <input id='piece-gallery' type='hidden' value='<%=@gallery.id%>'>
+  <input id='piece-id' type='hidden' value='<%=@piece.id%>'>
+  <input id='piece-hearts' type='hidden' value='<%=@piece.stars%>'>
+</form>

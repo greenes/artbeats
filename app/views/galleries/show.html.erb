@@ -1,0 +1,66 @@
+    <% if @gallery.errors.any? %>
+    <ul>
+        <% @gallery.errors.full_messages.each do |err|%>
+        <li> <%=err%></li>
+        <%end%>
+
+    </ul>
+    <% end %>
+
+    <h2> <%= "#{@gallery.gallery_name}" %></h2>
+    <h3> <%= "#{@gallery.description}" %></h3>
+
+      <p id="gallery-artist"> <%= "#{@profile.name}" %></p>
+
+      <% @pieces.each do |piece| %>
+      <a href='<%=artist_gallery_piece_path(@artist, @gallery, piece.id)%>'>
+          <div id='gallery-thumbnails' style="background-image:url('<%=piece.picture%>');"></div>
+      </a>
+      <%end%>
+
+
+<!-- when a user is logged in they will see the forms below to add a piece to the gallery
+or delete the gallery -->
+
+  <% if current_artist %>
+      <% if (current_artist.id == @artist.id) %>
+
+      <%= form_for [@artist, @gallery, @gallery.pieces.build] do |f| %>
+        <p>
+        <%= f.label :piece_name %>
+        <%= f.text_field :piece_name  %>
+        </p>
+
+        <p>
+        <%= f.label :piece_description %>
+        <%= f.text_area :piece_description %>
+        </p>
+
+        <p>
+        <%= f.label :picture %>
+        <%= f.text_area :picture %>
+        </p>
+
+        <%= f.hidden_field :gallery_id, :value => @gallery.id %>
+        <%= f.hidden_field :stars, :value => 0 %>
+
+
+        <p>
+        <%= f.submit %>
+        </p>
+
+      <%end%>
+
+
+        <!-- <form action="new-piece-button">
+          Name: <input type="text" name="name"><br>
+          Description: <input type="text" name="piece_description"><br>
+          Date: <input type="text" name="picture"><br>
+          <input type="submit" value="Submit">
+        </form> -->
+
+          <%= form_tag artist_gallery_path(@artist, @gallery.id), method: "delete" do %>
+              <%= submit_tag("delete this gallery and all its contents")%>
+          <%end%>
+      <%end%>
+  <%end%>

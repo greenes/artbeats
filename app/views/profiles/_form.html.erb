@@ -1,0 +1,18 @@
+<%= form_for [@artist, @profile] do |f| %>
+  <p>
+  <%= f.label :name %>
+  <%= f.text_field :name  %>
+  </p>
+
+  <p>
+  <%= f.label :profile %>
+  <%= f.text_area :profile %>
+  </p>
+
+  <%= f.hidden_field :artist_id, :value => @artist.id %>
+
+  <p>
+  <%= f.submit %>
+  </p>
+
+<%end%>

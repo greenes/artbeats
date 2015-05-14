@@ -1,0 +1,235 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ html {
+   background: #f4f1e1;
+ }
+
+ #welcome-page {
+   height: 100%;
+   width: 100%;
+   background: url('IMG_0977.JPG') no-repeat center center fixed;
+   -webkit-background-size: 150%;
+   -moz-background-size: 150%;
+   -o-background-size: 150%;
+   background-size: 150%;
+ }
+
+header {
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.6);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+  position: fixed;
+  padding: 5px;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+}
+
+#view-area {
+  position:absolute;
+  top: 50px;
+  left:0px;
+  right:0px;
+  bottom:0px;
+  overflow-y:scroll;
+}
+
+ #navbar a {
+   text-decoration: none;
+   color: white;
+   display: inline-block;
+   font-family: 'Indie Flower', cursive;
+   font-size: 30px;
+   width: 100%;
+ }
+
+ a:hover {
+   font-weight: bold;
+   font-size: 32px;
+ }
+
+ #piece-view {
+   float: right;
+   margin: 20px;
+
+ }
+ #art-beat {
+   text-decoration: none;
+   display: inline-block;
+   color: #b486ff;
+   float: left;
+   margin: 0px 0px 0px 10px;
+ }
+
+ #heart {
+    float: left;
+    position: relative;
+    display: inline-block;
+    width: 25px;
+    height: 20px;
+    margin: 5px;
+  }
+
+  #heart:before,
+  #heart:after {
+      position: absolute;
+      content: "";
+      left: 20px;
+      top: 0;
+      width: 20px;
+      height: 35px;
+      background: #d21616;
+      -moz-border-radius: 50px 50px 0 0;
+      border-radius: 50px 50px 0 0;
+      -webkit-transform: rotate(-45deg);
+         -moz-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+           -o-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+      -webkit-transform-origin: 0 100%;
+         -moz-transform-origin: 0 100%;
+          -ms-transform-origin: 0 100%;
+           -o-transform-origin: 0 100%;
+              transform-origin: 0 100%;
+  }
+  #heart:after {
+      left: 0;
+      -webkit-transform: rotate(45deg);
+         -moz-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+           -o-transform: rotate(45deg);
+              transform: rotate(45deg);
+      -webkit-transform-origin: 100% 100%;
+         -moz-transform-origin: 100% 100%;
+          -ms-transform-origin: 100% 100%;
+           -o-transform-origin: 100% 100%;
+              transform-origin :100% 100%;
+  }
+
+  #heartbeats {
+     float: left;
+     position: relative;
+     display: inline-block;
+     width: 100px;
+     height: 90px;
+     margin: 5px;
+   }
+
+   #heartbeats:before,
+   #heartbeats:after {
+       position: absolute;
+       content: "";
+       left: 50px;
+       top: 0;
+       width: 50px;
+       height: 80px;
+       background: #d21616;
+       -moz-border-radius: 50px 50px 0 0;
+       border-radius: 50px 50px 0 0;
+       -webkit-transform: rotate(-45deg);
+          -moz-transform: rotate(-45deg);
+           -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+               transform: rotate(-45deg);
+       -webkit-transform-origin: 0 100%;
+          -moz-transform-origin: 0 100%;
+           -ms-transform-origin: 0 100%;
+            -o-transform-origin: 0 100%;
+               transform-origin: 0 100%;
+   }
+   #heartbeats:after {
+       left: 0;
+       -webkit-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+           -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+               transform: rotate(45deg);
+       -webkit-transform-origin: 100% 100%;
+          -moz-transform-origin: 100% 100%;
+           -ms-transform-origin: 100% 100%;
+            -o-transform-origin: 100% 100%;
+               transform-origin :100% 100%;
+   }
+ #galleries {
+   display: inline-block;
+   color: #fd8cff;
+   float: right;
+ }
+
+ #login {
+   display: inline-block;
+   color: #85f5f9;
+   float: right;
+ }
+
+ #gallery-thumbnails {
+   display: inline-block;
+   width: 100px;
+   height: 100px;
+   background-size: 150%;
+   background-postion: center center;
+   background-repeat: no-repeat;
+ }
+
+ #pieces {
+   display: inline-block;
+   color: #7cbafd;
+   float: right;
+ }
+
+ #artists {
+   display: inline-block;
+   color: #fdabc7;
+   float: right;
+ }
+
+ img {
+   width:300px;
+   height:400px;
+ }
+
+ h2 a {
+   color: white;
+   text-decoration: none;
+   font-family: 'Indie Flower', cursive;
+   font-weight: bold;
+   text-align: center;
+
+ }
+
+#artist-names {
+  display: block;
+  color: black;
+}
+
+#footer a{
+  text-decoration: none;
+  color: white;
+
+}
+
+footer {
+    font-family: 'Indie Flower', cursive;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    position: fixed;
+    bottom: 0px;
+    heigth: 30px;
+    width: 100%;
+}

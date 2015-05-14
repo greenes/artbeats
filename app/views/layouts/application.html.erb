@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ArtBeat</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+</head>
+
+
+  <header>
+    <div id="navbar">
+      <div id='heart'></div>
+      <div id="art-beat"><%= link_to 'ArtBeats', root_path %></div>
+      <div id="pieces"><%= link_to 'pieces', pieces_path %></div>
+      <div id="galleries"><%= link_to 'galleries', galleries_path %></div>
+      <div id="artists"><%= link_to 'artists', profiles_path %></div>
+    </div>
+  </header>
+  <body>
+      <div id='view-area'>
+        <%=yield%>
+      </div>
+
+  </body>
+
+
+  <footer>
+    <p id='footer'><%=link_to "Sign-in", new_artist_session_path %>
+    <%=link_to "Log-out", destroy_artist_session_path, :method => :delete %></p>
+  </footer>
+</html>
