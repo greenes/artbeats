@@ -1,19 +1,62 @@
 
 
-<div id='piece-view'><img src="<%=@piece.picture%>"></div>
+  <div id='piece-view' style='background-image:url(<%=@piece.picture%>)'></div>
 
-<h2><%=@piece.piece_name%></h2>
+    <div id='piece-info'>
 
-<h2><%=@piece.piece_description%></h2>
+      <h3 id='piece-name'><%=@piece.piece_name%></h3>
 
-<h2><%="From #{@profile.name}'s #{@gallery.gallery_name} gallery"%></h2>
+      <h3 id='piece-description'><%=@piece.piece_description%></h3>
 
-<div id='heartbeats'> </div>
-<h2 id='num-of-artbeats'><%="#{@piece.stars}"%></h2>
+      <h3 id='piece-artist'><%="From #{@profile.name}'s #{@gallery.gallery_name} gallery"%></h3>
 
-<form>
-  <input id='piece-artist' type='hidden' value='<%=@artist.id%>'>
-  <input id='piece-gallery' type='hidden' value='<%=@gallery.id%>'>
-  <input id='piece-id' type='hidden' value='<%=@piece.id%>'>
-  <input id='piece-hearts' type='hidden' value='<%=@piece.stars%>'>
-</form>
+      <div id='heartbeats'> </div>
+      <h3 id='num-of-artbeats'><%="#{@piece.stars} heartbeats"%></h3>
+
+    </div>
+
+
+  <form>
+    <input id='piece-artist' type='hidden' value='<%=@artist.id%>'>
+    <input id='piece-gallery' type='hidden' value='<%=@gallery.id%>'>
+    <input id='piece-id' type='hidden' value='<%=@piece.id%>'>
+    <input id='piece-hearts' type='hidden' value='<%=@piece.stars%>'>
+  </form>
+
+  <div id='piece-forms'>
+    <% if current_artist %>
+      <% if (current_artist.id == @artist.id) %>
+
+      <%= form_for [@artist, @gallery, @piece] do |f| %>
+        <p>
+        <%= f.label :piece_name %>
+        <%= f.text_field :piece_name  %>
+        </p>
+
+        <p>
+        <%= f.label :piece_description %>
+        <%= f.text_area :piece_description %>
+        </p>
+
+        <p>
+        <%= f.label :picture %>
+        <%= f.text_field :picture %>
+        </p>
+
+        <%= f.hidden_field :gallery_id, :value => @gallery.id %>
+        <%= f.hidden_field :stars, :value => 0 %>
+
+        <p>
+        <%= f.submit %>
+        </p>
+
+      <%end%>
+
+        <%= form_tag artist_gallery_piece_path(@artist, @gallery.id, @piece.id), method: "delete" do %>
+            <%= submit_tag("delete this piece")%>
+
+
+            <%end%>
+        <%end%>
+      <%end%>
+    </div>

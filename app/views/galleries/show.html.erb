@@ -7,16 +7,18 @@
     </ul>
     <% end %>
 
-    <h2> <%= "#{@gallery.gallery_name}" %></h2>
-    <h3> <%= "#{@gallery.description}" %></h3>
+    <div id='gallery-show'>
+        <h3 id='gallery-name'> <%= "#{@gallery.gallery_name}" %></h3>
+        <h3 id="gallery-artist"> <%= "#{@profile.name}" %></h3>
+        <h3 id='gallery-description'> <%= "#{@gallery.description}" %></h3>
 
-      <p id="gallery-artist"> <%= "#{@profile.name}" %></p>
 
-      <% @pieces.each do |piece| %>
-      <a href='<%=artist_gallery_piece_path(@artist, @gallery, piece.id)%>'>
-          <div id='gallery-thumbnails' style="background-image:url('<%=piece.picture%>');"></div>
-      </a>
-      <%end%>
+          <% @pieces.each do |piece| %>
+          <a href='<%=artist_gallery_piece_path(@artist, @gallery, piece.id)%>'>
+              <div id='gallery-thumbnails' style="background-image:url('<%=piece.picture%>');"></div>
+          </a>
+          <%end%>
+      <div>
 
 
 <!-- when a user is logged in they will see the forms below to add a piece to the gallery
@@ -24,6 +26,8 @@ or delete the gallery -->
 
   <% if current_artist %>
       <% if (current_artist.id == @artist.id) %>
+
+      <h3 id='add-a-piece'>Add a piece to this gallery:</h3>
 
       <%= form_for [@artist, @gallery, @gallery.pieces.build] do |f| %>
         <p>
@@ -37,8 +41,8 @@ or delete the gallery -->
         </p>
 
         <p>
-        <%= f.label :picture %>
-        <%= f.text_area :picture %>
+        <%= f.label :picture, "URL to photo of your piece" %>
+        <%= f.text_field :picture %>
         </p>
 
         <%= f.hidden_field :gallery_id, :value => @gallery.id %>
@@ -60,7 +64,7 @@ or delete the gallery -->
         </form> -->
 
           <%= form_tag artist_gallery_path(@artist, @gallery.id), method: "delete" do %>
-              <%= submit_tag("delete this gallery and all its contents")%>
+              <%= submit_tag("delete this gallery and its pieces")%>
           <%end%>
       <%end%>
   <%end%>

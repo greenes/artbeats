@@ -59,8 +59,11 @@ class PiecesController < ApplicationController
   def destroy
     @pieces = Piece.all
     @piece = Piece.find(params[:id])
+    @gallery = @piece.gallery
+    @artist = @gallery.artist
+    @profile = @artist.profile
     @piece.destroy
-    redirect_to @pieces
+    redirect_to artist_gallery_path(@artist, @gallery)
   end
 
 private

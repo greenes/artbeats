@@ -19,9 +19,10 @@
  }
 
  #welcome-page {
+   color: white;
    height: 100%;
    width: 100%;
-   background: url('IMG_0977.JPG') no-repeat center center fixed;
+   background: url("http://i.imgur.com/jP7V6ky.jpg") no-repeat center center fixed;
    -webkit-background-size: 150%;
    -moz-background-size: 150%;
    -o-background-size: 150%;
@@ -40,12 +41,16 @@ header {
   width: 100%;
 }
 
+#piece-forms {
+  float: left;
+}
+
 #view-area {
   position:absolute;
   top: 50px;
   left:0px;
   right:0px;
-  bottom:0px;
+  bottom:90px;
   overflow-y:scroll;
 }
 
@@ -53,27 +58,69 @@ header {
    text-decoration: none;
    color: white;
    display: inline-block;
-   font-family: 'Indie Flower', cursive;
    font-size: 30px;
    width: 100%;
  }
 
- a:hover {
+ #navbar a:hover {
    font-weight: bold;
    font-size: 32px;
  }
 
  #piece-view {
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-position: center center;
    float: right;
-   margin: 20px;
-
+   height: 400px;
+   width: 400px;
+   margin: 50px;
  }
+
+ #piece-name, #gallery-name{
+     color: navy;
+     font-family: 'Josefin Sans', sans-serif;
+     font-size: 50px;
+     font-weight: bold;
+     margin: 10px 0px 0px 0px;
+ }
+
+ #gallery-artist {
+   color: navy;
+   font-family: 'Josefin Sans', sans-serif;
+   font-size: 40;
+ }
+
+ #gallery-description {
+   color: navy;
+   font-family: 'Josefin Sans', sans-serif;
+   font-size: 30;
+   border-bottom: navy solid 2px;
+   padding: 0px 0px 10px 0px;
+   width: 500px;
+   margin: auto;
+ }
+
+ #add-a-piece {
+   color: navy;
+   font-family: 'Josefin Sans', sans-serif;
+   font-size: 30;
+   text-decoration: underline;
+ }
+
+ h3 a{
+   color: navy;
+   font-family: 'Josefin Sans', sans-serif;
+   font-size: 40;
+ }
+
  #art-beat {
    text-decoration: none;
    display: inline-block;
    color: #b486ff;
    float: left;
    margin: 0px 0px 0px 10px;
+   font-family: 'Indie Flower', cursive;
  }
 
  #heart {
@@ -165,11 +212,52 @@ header {
             -o-transform-origin: 100% 100%;
                transform-origin :100% 100%;
    }
+
+
  #galleries {
    display: inline-block;
    color: #fd8cff;
    float: right;
+   font-family: 'Josefin Sans', sans-serif;
  }
+
+ #galleries-index  a {
+   font-size: 40px;
+   text-align: center;
+   text-decoration: none;
+   background: #66ffa6;
+   border-radius: 5px;
+   width: 500px;
+   margin: 10px auto 10px auto;
+   padding: 5px;
+   font-family: 'Josefin Sans', sans-serif;
+   margin: 10px 0px 5px 0px;
+ }
+
+ #gallery-index-artist {
+   text-align: center;
+   color: navy;
+   font-family: 'Josefin Sans', sans-serif;
+   margin: 0px 0px 10px 0px;
+ }
+
+ #galleries-index, #gallery-show, #pieces-index, #artist-show {
+   text-align: center;
+ }
+
+#artist-description, #artist-names a, #pieces-index  a {
+   font-size: 40px;
+   text-align: center;
+   text-decoration: none;
+   color: navy;
+   font-family: 'Josefin Sans', sans-serif;
+ }
+
+#artist-description {
+  border-bottom: navy solid 2px;
+  width: 500px;
+  margin: auto;
+}
 
  #login {
    display: inline-block;
@@ -182,7 +270,7 @@ header {
    width: 100px;
    height: 100px;
    background-size: 150%;
-   background-postion: center center;
+   background-position: center center;
    background-repeat: no-repeat;
  }
 
@@ -190,12 +278,15 @@ header {
    display: inline-block;
    color: #7cbafd;
    float: right;
+   padding: 0px 10px 0px 0px;
+   font-family: 'Josefin Sans', sans-serif;
  }
 
  #artists {
    display: inline-block;
    color: #fdabc7;
    float: right;
+   font-family: 'Josefin Sans', sans-serif;
  }
 
  img {
@@ -212,24 +303,112 @@ header {
 
  }
 
-#artist-names {
+#artist-names, #my-profile {
   display: block;
-  color: black;
+  color: navy;
+  text-align: center;
+}
+
+#artist-name {
+  display: block;
+  color: navy;
+  text-align: center;
+  font-size:40px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+#artist-show-galleries a{
+  font-size: 30px;
+  text-align: center;
+  text-decoration: none;
+  color: navy;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+#piece-description, #piece-artist, #num-of-artbeats {
+  font-size: 30px;
+  text-align: left;
+  text-decoration: none;
+  color: navy;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+#my-profile a, #artist-names a {
+  text-decoration: none;
+  color: navy;
+  font-size: 40;
+}
+
+#artist-index-div {
+  width: 500px;
+  margin: auto;
+}
+
+#artist-names {
+  background: #ff8d00;
+  border-radius: 5px;
+  width: 400px;
+  margin: 20px auto 10px auto;
+  position: center;
+  padding: 5px;
+}
+
+#my-profile {
+  background: #50e7be;
+  border-radius: 5px;
+  width: 100px;
+  margin: auto;
+  padding: 5px;
+}
+
+p, #your-galleries {
+  text-align: center;
+  text-decoration: none;
+  color: navy;
+  font-size: 20;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+#add-galleries a{
+  text-decoration: none;
+  color: navy;
+  font-size: 20;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+#add-galleries {
+  background: #b8befb;
+  border-radius: 5px;
+  width: 300px;
+  padding: 5px;
+  margin: auto;
+  text-align: center;
+  text-decoration: none;
+  color: navy;
+  font-size: 20;
+  color: navy;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 #footer a{
   text-decoration: none;
   color: white;
-
 }
 
 footer {
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.6);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+
     font-family: 'Indie Flower', cursive;
     font-size: 30px;
     text-align: center;
-    color: white;
     position: fixed;
     bottom: 0px;
-    heigth: 30px;
-    width: 100%;
+    left: -30px;
+    right: -5px;
+    height: 90px;
+    width: 110%;
+    margin: 0px;
 }

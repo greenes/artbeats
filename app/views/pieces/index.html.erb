@@ -5,5 +5,5 @@
     <% @gallery = Gallery.find(galleryid) %>
     <% artistid = @gallery.artist_id %>
     <% @artist = Artist.find(artistid) %>
-  <h2 id='pieces-index'><%= link_to "#{piece.piece_name}", artist_gallery_piece_path(@artist, @gallery, piece.id) %></h2>
+  <h3 id='pieces-index'><%= link_to "#{piece.piece_name}", artist_gallery_piece_path(@artist, @gallery, piece.id) %></h3>
 <% end %>

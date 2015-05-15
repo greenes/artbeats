@@ -1,13 +1,15 @@
 
-  <h2><%= @profile.name %></h2>
-  <h2><%= @profile.profile %></h2>
+<div id='artist-show'>
+  <h2 id='artist-name'><%= @profile.name %></h2>
+  <h2 id='artist-description'><%= @profile.profile %></h2>
 
   <% @galleries.reverse_each do |gallery| %>
-    <h2><%= link_to "#{gallery.gallery_name}", artist_gallery_path(@artist, gallery.id) %></h2>
+    <h2 id='artist-show-galleries'><%= link_to "#{gallery.gallery_name}", artist_gallery_path(@artist, gallery.id) %></h2>
   <% end %>
 
   <% if current_artist %>
     <% if (current_artist.id == @artist) %>
-      <h2><%= link_to 'add gallery', new_artist_gallery_path(@artist)%></h2>
+      <h2 id='add-galleries'><%= link_to 'add gallery', new_artist_gallery_path(@artist)%></h2>
     <%end%>
   <%end%>
+</div>
