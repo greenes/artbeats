@@ -1,28 +1,14 @@
-== README
+== ArtBeats
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+My sister, an artist, graduated from VCU, a top art school, with a painting degree. She has struggled to find a way to get her art in front of people. She wants to be able to showcase all of her pieces easily and also to connect with other artists in her area to collaborate on in-person events where potential buyers may be.
 
-Things you may want to cover:
+This application allows artists to showcase their art and organize them into galleries. Logged in users can create an artist profile, add galleries, add pieces to their galeries, browse other artists and their work, and "like" pieces.
 
-* Ruby version
+Potential buyers, curators, and anyone interested can browse the artwork and "like" pieces.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+== User Stories
+- As an artist I am able to log in and view/add/edit/update/delete my art from the site.
+- As an artist/curator/buyer/browser I am able to view all artist pieces.
+- As an artist/curator/buyer/browser I am able to "like" pieces.
+- As an artist I am able to view/edit my contact information/profile.
+- As an artist/curator/buyer/browser I am able to view all the artists' contact information/profiles.
